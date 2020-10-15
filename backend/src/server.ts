@@ -11,12 +11,12 @@ const app = express();
 app.use('*', cors());
 app.use(compression());
 
-const servidor = new ApolloServer({
+const server = new ApolloServer({
   schema,
   introspection: true
 });
 
-servidor.applyMiddleware({ app });
+server.applyMiddleware({ app });
 app.get('/', expressPlayGround({
   endpoint: '/graphql'
 }));
@@ -29,5 +29,5 @@ httpServer.listen(
   {
     port: PORT
   },
-  () => console.log(`Servidor online in http://localhost:${PORT}`)
+  () => console.log(`Server online in http://localhost:${PORT}`)
 );
