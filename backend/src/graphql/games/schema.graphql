@@ -1,3 +1,14 @@
 extend type Query {
     games:String!
 }
+
+type Categoria {
+    id: ID!
+    nombre: String!
+}
+
+type Game {
+    id: ID!
+    nombre: String!
+    categoria: Categoria!
+}
